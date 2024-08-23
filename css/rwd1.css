@@ -1,0 +1,260 @@
+@import url(common/reset.css);
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+
+body {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+/* 기본 스타일 적용 */
+/* 배경색 */
+/* body {
+  background-color: #ccc;
+} */
+
+#root {
+  width: 100%;
+  height: 100vh;
+
+  /* border: 1px solid #f00; */
+  box-sizing: border-box;
+}
+
+
+/* header시작 */
+
+.header {
+  width: 100%;
+
+  /* 정렬하려는 부모요소의 설정 */
+  display: flex;
+  justify-content: center;
+  /* 자식 컨텐츠 부모의 가로 가운데 */
+
+  box-shadow: inset 0 -1px 1px #ccc;
+}
+
+.header .nav {
+  flex: 0 1 1600px; /* 최대 1600px; */
+  /* background-color: hsl(189, 75%, 60%); */
+  
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .nav h1.logo {
+  flex: 0 0 120px; /* 120px 고정*/
+}
+
+.header .nav h1.logo img {
+  width: 100%;
+  display: block;
+}
+
+.header .nav .gnb {
+  /* background-color: aquamarine; */
+
+
+  padding: 10px 0 ;
+}
+
+.header .nav .gnb > ul {
+  display: flex;
+}
+
+.header .nav .gnb > ul > li {
+  background-color: #fff;
+  color: #000;
+
+}
+.header .nav .gnb > ul > li:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.header .nav .gnb > ul > li > a {
+  padding: 0  20px;
+  line-height: 40px;
+  color: inherit;
+  background-color: inherit;
+}
+
+
+
+
+
+
+
+/* container시작 */
+
+.rwd1 {
+  width: 100%;
+  /* height: 100vh; */
+  height: auto;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  /* border: 1px solid; */
+  box-sizing: border-box;
+
+  
+}
+
+.rwd1 .rwd1-con{
+  /* 부모가 display: flex; */
+  flex: 0 1 1600px;
+  /* 최대 1920px */
+  /* flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 1920px; */
+
+  /* border: 1px solid; */
+
+  /* 전체 height - header h - footer h */
+  height: calc(100vh - 60px - 80px);
+  box-sizing: border-box;
+
+  padding:  0 1vW;
+}
+
+.rwd1 .rwd1-con > ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  /* grid-template-rows: repeat(2, 400px);
+  grid-auto-rows: 400px; */
+
+  grid-template-rows: repeat(2, 385px);
+  grid-auto-rows: 385px;
+
+  /* gap: 0.52vw; */
+  /* gap: 0.5vw; */
+  /* gap: 0.3vw; */
+  gap: 10px;
+
+  padding: 0.3vmax;
+  box-sizing: border-box;
+}
+
+.rwd1 .rwd1-con > ul >li {
+  /* border: 1px solid; */
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;  
+  justify-content: space-between;
+
+  box-shadow: inset 0 -8px 5px #db7878;
+
+  border-radius: 20px 20px 10px 10px;
+  overflow: hidden;
+}
+
+.rwd1 .rwd1-con > ul >li:hover {
+  filter: grayscale(90%);
+}
+
+
+.rwd1 .rwd1-con > ul > li .top {
+  /* border: 1px solid; */
+  box-sizing: border-box;
+  flex: 3;
+}
+
+.rwd1 .rwd1-con > ul > li .top img {
+  width: 100%;
+  display: block;
+
+}
+
+.rwd1 .rwd1-con > ul > li .bottom {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* border: 1px solid; */
+  box-sizing: border-box;
+}
+
+
+
+/* footer시작 */
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+
+}
+
+.footer .footer-con {
+  flex: 0 1 1600px;
+  height: 80px;
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* 태블릿(*1024*) */
+
+@media screen and (max-width:1024px) { /*최대 1024px*/
+  /* body {
+    background-color: #f00;
+  } */
+
+  .rwd1 .rwd1-con{
+    padding: 0.8vw;
+    box-sizing: border-box;
+  }
+  
+  .rwd1 .rwd1-con > ul {
+ 
+    grid-template-columns: repeat(2, 1fr);  
+    grid-row: repeat(2, minmax(400px, auto));
+    grid-auto-rows: minmax(400px, auto);
+ 
+  }
+
+  .rwd1 .rwd1-con > ul > li .bottom {
+    padding: 2.5vh;
+    box-sizing: border-box;
+  }
+}
+
+/* 모바일 */
+@media  screen and (max-width:640px) {
+  /* body {
+    background-color: aqua;
+  } */
+
+  .rwd1 .rwd1-con {
+    padding: 1vw;
+    box-sizing: border-box;
+  }
+
+  .rwd1 .rwd1-con > ul {
+ 
+    grid-template-columns: repeat(1, 1fr);  
+    grid-row: repeat(1, auto);
+    grid-auto-rows: auto;
+  }
+
+  
+  .rwd1 .rwd1-con > ul > li .bottom {
+    padding: 2vh;
+    box-sizing: border-box;
+  }
+
+}
